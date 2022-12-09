@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -27,11 +28,8 @@ func main() {
 		}
 		counter[i] += num
 	}
-	var largest int64
-	for _, val := range counter {
-		if largest < val {
-			largest = val
-		}
-	}
-	fmt.Println(largest)
+	sort.Slice(counter, func(i, j int) bool {
+		return counter[j] < counter[i]
+	})
+	fmt.Println(counter[0] + counter[1] + counter[2])
 }
