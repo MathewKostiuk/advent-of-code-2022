@@ -30,7 +30,6 @@ func main() {
 		map1 := make(map[byte]int)
 		map2 := make(map[byte]int)
 		map3 := make(map[byte]int)
-		fmt.Println(string(str1), string(str2), string(str3), i, j, k)
 		var longest map[byte]int
 
 		for _, b := range str1 {
@@ -62,10 +61,8 @@ func main() {
 				key := int(key)
 				if LOWERCASE_START <= key && key <= LOWERCASE_END {
 					result = key - LOWERCASE_MODIFIER
-					fmt.Println("Lower", key, string(key))
 				} else {
 					result = key - UPPERCASE_MODIFiER
-					fmt.Println("Upper", key, string(key))
 				}
 				sum += result
 			}
